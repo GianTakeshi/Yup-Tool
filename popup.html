@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html style="border-radius: 18px; overflow: hidden;">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    /* 整个插件外围：增加 18px 圆角并隐藏溢出 */
+    body { 
+      width: 320px; 
+      padding: 18px; 
+      font-family: -apple-system, sans-serif; 
+      background-color: #ffffff; 
+      margin: 0;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    
+    .header { 
+      font-weight: 700; margin-bottom: 15px; color: #1d1d1f; font-size: 14px; 
+      border-bottom: 1px solid #f2f2f7; padding-bottom: 10px; 
+      display: flex; justify-content: space-between; align-items: center;
+    }
+
+    #userTag { font-size: 11px; font-weight: normal; flex-shrink: 0; }
+
+    /* 智能输入框 - 保持 14px 圆角 */
+    #smartInput { 
+      width: 100%; padding: 12px; border: 1px solid #f2f2f7; background: #f5f5f7;
+      border-radius: 14px; outline: none; font-size: 14px; box-sizing: border-box;
+      transition: all 0.2s; margin-bottom: 15px; text-transform: uppercase;
+    }
+    #smartInput:focus { background: #fff; border-color: #007aff; box-shadow: 0 0 0 4px rgba(0,122,255,0.1); }
+    #smartInput::placeholder { text-transform: none; color: #8e8e93; }
+
+    #resultList { 
+      max-height: 100px; overflow-y: auto; background: #ffffff; 
+      padding: 10px 0; font-size: 12px; margin-bottom: 15px;
+      color: #1d1d1f; border-top: 1px solid #f2f2f7; line-height: 1.6;
+    }
+
+    .btn-group { display: flex; gap: 10px; }
+    
+    /* 按钮 - 保持 14px 圆角 */
+    button { flex: 1; padding: 12px; border: none; border-radius: 14px; cursor: pointer; font-weight: 600; font-size: 13px; transition: 0.2s; }
+    #extractBtn { background: #007aff; color: white; }
+    #downloadBtn { background: #1d1d1f; color: white; display: none; }
+    
+    button:active { transform: scale(0.96); }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span>搬运工 ᕕ( ᐛ )ᕗ</span>
+    <span id="userTag">识别中...</span>
+  </div>
+
+  <input type="text" id="smartInput" placeholder="输入 CQ10-100 或 CQ10 100">
+
+  <div id="resultList">准备就绪，老板请吩咐！</div>
+
+  <div class="btn-group">
+    <button id="extractBtn">(σ｀д′)σ 抓取！</button>
+    <button id="downloadBtn">(ノ>_<)ノ 下载！</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
